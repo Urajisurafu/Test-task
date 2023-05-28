@@ -23,6 +23,9 @@ import {
   MatInputModule,
   MatListModule,
 } from "@angular/material";
+import { StoreModule } from "@ngrx/store";
+import { messageReducer } from "./state/chat.reducer";
+import { MaterialModule } from "./material/material.module";
 
 @NgModule({
   declarations: [
@@ -41,13 +44,11 @@ import {
     HttpClientModule,
     SharedModule,
     FormsModule,
-    MatIconModule,
-    MatCardModule,
-    MatFormFieldModule,
+    MaterialModule,
     ReactiveFormsModule,
-    MatInputModule,
-    MatButtonModule,
-    MatListModule,
+    StoreModule.forRoot({
+      messagesStore: messageReducer,
+    }),
   ],
   providers: [AppService, AuthService],
   bootstrap: [AppComponent],

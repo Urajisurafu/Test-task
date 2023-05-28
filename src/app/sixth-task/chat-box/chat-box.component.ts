@@ -1,7 +1,9 @@
-import { Component, OnInit } from "@angular/core";
+import { Component } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import Pusher from "pusher-js";
 import { FormControl, Validators } from "@angular/forms";
+import { Message } from "../../state/chat.actions";
+import { select, Store } from "@ngrx/store";
 
 @Component({
   selector: "app-chat-box",
@@ -12,12 +14,17 @@ export class ChatBoxComponent {
   username = "username";
   messages = [];
 
-  isMyMessage: boolean;
-
   textFormControl = new FormControl("");
   nameFormControl = new FormControl("userName", [Validators.required]);
 
-  constructor(private http: HttpClient) {}
+  constructor(
+    private http: HttpClient,
+    private store: Store<{ count: number; messagesStore: any }>
+  ) {
+    store.pipe(select("messagesStore")).subscribe((data) => {
+      this.messages = data.messagesStore;
+    });
+  }
 
   ngOnInit(): void {
     Pusher.logToConsole = true;
@@ -28,7 +35,12 @@ export class ChatBoxComponent {
 
     const channel = pusher.subscribe("chat");
     channel.bind("message", (data) => {
-      this.messages.push(data);
+      this.store.dispatch(
+        new Message({
+          username: data.username,
+          message: data.message,
+        })
+      );
     });
   }
 

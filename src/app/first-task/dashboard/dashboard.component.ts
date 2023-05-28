@@ -17,7 +17,7 @@ import { AppService } from "../../services/app.service";
   styleUrls: ["./dashboard.component.scss"],
 })
 export class DashboardComponent implements OnInit, OnDestroy {
-  user: any = {};
+  user = {};
 
   subscription: Subscription;
 
