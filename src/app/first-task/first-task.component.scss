@@ -1,0 +1,25 @@
+.first-task{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card{
+  width: 500px;
+  padding: 20px;
+}
+
+.header{
+  justify-content: space-around;
+  display: flex;
+}
+
+.check-circle-login{
+  color: #01ce01;
+}
+
+.check-circle-logout{
+  color: #ea0d05;
+}

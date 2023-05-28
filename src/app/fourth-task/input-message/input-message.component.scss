@@ -1,0 +1,29 @@
+.alignment{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 20px;
+  width: 100%;
+  height: 100%
+}
+
+.enter-data{
+  width: 40%;
+  height: 60%;
+
+  &--content{
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-around;
+  }
+}
+
+.form-input{
+  display: flex;
+  flex-direction: column;
+}
+
+.search-data{
+  width: 40%;
+  height: 80%;
+}

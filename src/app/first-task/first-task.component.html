@@ -1,0 +1,31 @@
+<div class="first-task">
+  <mat-card class="card">
+    <mat-card-header class="header">
+      <mat-card-title>
+        Profile
+      </mat-card-title>
+
+      <mat-card-subtitle>
+        You must be online and logged in to receive data.
+      </mat-card-subtitle>
+
+      <mat-icon
+        [ngClass]="isUserLoggedIn == true ? 'check-circle-login' : 'check-circle-logout'"
+      >check_circle
+      </mat-icon>
+
+      <mat-icon *ngIf="appService.networkStatus; else network_locked">
+        wifi
+      </mat-icon>
+      <ng-template #network_locked>
+        <mat-icon>signal_wifi_off</mat-icon>
+      </ng-template>
+
+    </mat-card-header>
+
+    <mat-card-content>
+      <router-outlet></router-outlet>
+    </mat-card-content>
+
+  </mat-card>
+</div>

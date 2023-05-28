@@ -1,0 +1,57 @@
+<div class="alignment">
+  <mat-card class="enter-data">
+    <mat-card-header>Data is added here</mat-card-header>
+    <mat-card-content class="enter-data--content">
+
+      <div class="form-input">
+        <form (submit)="addItem(addFormControl.value)">
+          <mat-form-field >
+            <mat-label>Enter data</mat-label>
+            <input type="text" matInput [formControl]="addFormControl" [errorStateMatcher]="matcher"
+                   placeholder="Ex. Some text">
+            <mat-error *ngIf="addFormControl.hasError('required')">
+              Enter some <strong>text</strong>
+            </mat-error>
+          </mat-form-field>
+        </form>
+
+        <button mat-flat-button (click)="addItem(addFormControl.value)" color="primary">Add</button>
+      </div>
+
+      <mat-list>
+        <h2>List of data</h2>
+        <mat-list-item *ngFor="let item of userData | async">{{item}}</mat-list-item>
+      </mat-list>
+    </mat-card-content>
+
+  </mat-card>
+
+  <mat-card class="enter-data">
+    <mat-card-header>Here search among existing data</mat-card-header>
+    <mat-card-content class="enter-data--content">
+
+      <div class="form-input">
+        <form (submit)="applyChanges()">
+          <mat-form-field >
+            <mat-label>Enter data</mat-label>
+            <input (keyup)="search(searchFormControl.value)" type="text" matInput
+                   [formControl]="searchFormControl" [errorStateMatcher]="matcher"
+                   placeholder="Ex. Some text">
+            <mat-error *ngIf="searchFormControl.hasError('required')">
+              Enter some <strong>text</strong>
+            </mat-error>
+          </mat-form-field>
+        </form>
+
+        <button mat-flat-button (click)="applyChanges()" color="primary">Show result</button>
+      </div>
+
+      <mat-list>
+        <h2>Results</h2>
+        <mat-list-item *ngFor="let item of items | async">{{item}}</mat-list-item>
+      </mat-list>
+
+    </mat-card-content>
+  </mat-card>
+</div>
+

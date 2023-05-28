@@ -1,0 +1,27 @@
+<div class="chat">
+  <mat-card class="input-data">
+    <form>
+      <mat-form-field>
+        <input type="text" matInput [formControl]="nameFormControl"
+               placeholder="Enter your name">
+      </mat-form-field>
+    </form>
+
+    <mat-list>
+      <mat-list-item *ngFor="let msg of messages" >
+        <div class="list">
+          <div><strong >{{msg.username}}</strong></div>
+          <div class="list--text">{{msg.message}}</div>
+        </div>
+      </mat-list-item>
+    </mat-list>
+  </mat-card>
+
+  <form (submit)="submit()" class="submit">
+    <mat-form-field class="submit--form">
+      <input type="text" matInput [formControl]="textFormControl"
+             placeholder="Enter your message">
+    </mat-form-field>
+  </form>
+</div>
+

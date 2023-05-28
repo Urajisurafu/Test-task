@@ -1,0 +1,12 @@
+<mat-card-content class="user-info">
+  <h3>Hi, {{ user?.first_name }}</h3>
+  <p>Your info:</p>
+  <ul>
+    <li>Age: {{ user?.date_of_birth }}</li>
+  </ul>
+
+  <button  mat-menu-item class="user-info--button" (click)="logOut()">
+    <mat-icon>power_settings_new</mat-icon>
+    Logout
+  </button>
+</mat-card-content>
