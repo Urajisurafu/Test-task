@@ -51,6 +51,7 @@ export class ChatBoxComponent {
           message: this.textFormControl.value,
         })
         .subscribe();
+      this.textFormControl.reset();
     }
   }
 }

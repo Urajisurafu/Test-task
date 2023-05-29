@@ -7,10 +7,10 @@ import { switchMap } from "rxjs/operators";
 
 @Component({
   selector: "app-organizer",
-  templateUrl: "./organizer.component.html",
-  styleUrls: ["./organizer.component.scss"],
+  templateUrl: "./list.component.html",
+  styleUrls: ["./list.component.scss"],
 })
-export class OrganizerComponent implements OnInit {
+export class ListComponent implements OnInit {
   form: FormGroup;
   tasks: Task[] = [];
 

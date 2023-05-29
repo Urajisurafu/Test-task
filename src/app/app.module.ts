@@ -21,7 +21,7 @@ import { MaterialModule } from "./material/material.module";
 import { TodoListComponent } from "./todo-list/todo-list.component";
 import { CalendarComponent } from "./todo-list/calendar/calendar.component";
 import { SelectorComponent } from "./todo-list/selector/selector.component";
-import { OrganizerComponent } from "./todo-list/organizer/organizer.component";
+import { ListComponent } from "./todo-list/list/list.component";
 import { MomentPipe } from "./pipes/moment.pipe";
 
 @NgModule({
@@ -36,7 +36,7 @@ import { MomentPipe } from "./pipes/moment.pipe";
     TodoListComponent,
     CalendarComponent,
     SelectorComponent,
-    OrganizerComponent,
+    ListComponent,
     MomentPipe,
   ],
   imports: [
