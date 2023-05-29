@@ -3,59 +3,66 @@
     <span>Tasks</span>
     <span class="example-spacer"></span>
 
-    <button mat-icon-button (click)="toggleTheme()" matTooltip="Toggle dark theme">
-      <mat-icon>
-        brightness_6
-      </mat-icon>
+    <button
+      mat-icon-button
+      (click)="toggleTheme()"
+      matTooltip="Toggle dark theme"
+    >
+      <mat-icon> brightness_6 </mat-icon>
     </button>
 
-    <button mat-button [matMenuTriggerFor]="menu" class="menu-button" matTooltip="Select a theme color">
+    <button
+      mat-button
+      [matMenuTriggerFor]="menu"
+      class="menu-button"
+      matTooltip="Select a theme color"
+    >
       {{ themeColor }}
     </button>
 
-    <ng-template #noRadio>
-      radio_button_unchecked
-    </ng-template>
+    <ng-template #noRadio> radio_button_unchecked </ng-template>
 
     <mat-menu #menu="matMenu">
       <button mat-menu-item (click)="themeColor = 'primary'">
         <mat-icon [color]="themeColor === 'primary' ? 'primary' : 'no-color'">
-          <ng-container *ngIf="themeColor === 'primary'; else noRadio">radio_button_checked</ng-container>
+          <ng-container *ngIf="themeColor === 'primary'; else noRadio"
+            >radio_button_checked</ng-container
+          >
         </mat-icon>
         Primary
       </button>
       <button mat-menu-item (click)="themeColor = 'warn'">
         <mat-icon [color]="themeColor === 'warn' ? 'warn' : 'no-color'">
-          <ng-container *ngIf="themeColor === 'warn'; else noRadio">radio_button_checked</ng-container>
+          <ng-container *ngIf="themeColor === 'warn'; else noRadio"
+            >radio_button_checked</ng-container
+          >
         </mat-icon>
         Warn
       </button>
       <button mat-menu-item (click)="themeColor = 'accent'">
         <mat-icon [color]="themeColor === 'accent' ? 'accent' : 'no-color'">
-          <ng-container *ngIf="themeColor === 'accent'; else noRadio">radio_button_checked</ng-container>
+          <ng-container *ngIf="themeColor === 'accent'; else noRadio"
+            >radio_button_checked</ng-container
+          >
         </mat-icon>
         Accent
       </button>
     </mat-menu>
-
   </mat-toolbar>
   <mat-sidenav-container class="example-container">
-
     <mat-sidenav mode="side" opened>
       <mat-nav-list>
-        <h1>Sidenav</h1>
+        <h1>Navigation</h1>
         <a mat-list-item routerLink="/first-task">Task 1-2</a>
         <a mat-list-item routerLink="/third-task">Task 3</a>
         <a mat-list-item routerLink="/fourth-task">Task 4</a>
         <a mat-list-item routerLink="/sixth-task">Task 6</a>
+        <a mat-list-item routerLink="/ToDo-list">ToDo list</a>
       </mat-nav-list>
     </mat-sidenav>
 
     <mat-sidenav-content>
-
       <router-outlet></router-outlet>
-
     </mat-sidenav-content>
-
   </mat-sidenav-container>
 </div>

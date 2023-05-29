@@ -23,7 +23,6 @@ export class FirstTaskComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.appService.networkStatus$.unsubscribe();
-    // this.authService.isUserLoggedIn$.unsubscribe();
   }
 
   checkNetworkStatus() {

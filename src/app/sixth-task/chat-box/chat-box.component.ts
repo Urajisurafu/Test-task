@@ -11,7 +11,6 @@ import { select, Store } from "@ngrx/store";
   styleUrls: ["./chat-box.component.scss"],
 })
 export class ChatBoxComponent {
-  username = "username";
   messages = [];
 
   textFormControl = new FormControl("");

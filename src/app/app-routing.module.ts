@@ -6,6 +6,7 @@ import { LandingPageComponent } from "./first-task/landing-page/landing-page.com
 import { InputMessageComponent } from "./fourth-task/input-message/input-message.component";
 import { ThirdTaskComponent } from "./third-task/third-task.component";
 import { ChatBoxComponent } from "./sixth-task/chat-box/chat-box.component";
+import {TodoListComponent} from "./todo-list/todo-list.component";
 
 const itemRoutes: Routes = [
   { path: "", component: LandingPageComponent },
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: "third-task", component: ThirdTaskComponent },
   { path: "fourth-task", component: InputMessageComponent },
   { path: "sixth-task", component: ChatBoxComponent },
+  { path: "ToDo-list", component: TodoListComponent },
 ];
 
 @NgModule({

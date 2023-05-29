@@ -15,17 +15,14 @@ import { InputMessageComponent } from "./fourth-task/input-message/input-message
 import { ThirdTaskComponent } from "./third-task/third-task.component";
 import { ChatBoxComponent } from "./sixth-task/chat-box/chat-box.component";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
-import {
-  MatButtonModule,
-  MatCardModule,
-  MatFormFieldModule,
-  MatIconModule,
-  MatInputModule,
-  MatListModule,
-} from "@angular/material";
 import { StoreModule } from "@ngrx/store";
 import { messageReducer } from "./state/chat.reducer";
 import { MaterialModule } from "./material/material.module";
+import { TodoListComponent } from "./todo-list/todo-list.component";
+import { CalendarComponent } from "./todo-list/calendar/calendar.component";
+import { SelectorComponent } from "./todo-list/selector/selector.component";
+import { OrganizerComponent } from "./todo-list/organizer/organizer.component";
+import { MomentPipe } from "./pipes/moment.pipe";
 
 @NgModule({
   declarations: [
@@ -36,6 +33,11 @@ import { MaterialModule } from "./material/material.module";
     InputMessageComponent,
     ThirdTaskComponent,
     ChatBoxComponent,
+    TodoListComponent,
+    CalendarComponent,
+    SelectorComponent,
+    OrganizerComponent,
+    MomentPipe,
   ],
   imports: [
     BrowserModule,
